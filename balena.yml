@@ -41,17 +41,23 @@ assets:
   repository:
     type: blob.asset
     data:
-      url: 'https://github.com/balenalabs/balena-sound'
+      url: 'https://github.com/gggauravgandhi/balena-pi-hub'
   logo:
     type: blob.asset
     data:
       url: >-
-        https://raw.githubusercontent.com/balenalabs/balena-sound/master/logo.png
+        https://raw.githubusercontent.com/gggauravgandhi/balena-pi-hub/main/logo.png
 data:
+  applicationConfigVariables:
+    - BALENA_HOST_CONFIG_gpu_mem: 64
   applicationEnvironmentVariables:
     - SOUND_VOLUME: 75
     - AUDIO_OUTPUT: AUTO
-  defaultDeviceType: raspberry-pi
+    - INTERFACE: 'eth0'
+    - WEBPASSWORD: 'balena'
+    - PIHOLE_DNS_: '1.1.1.1;1.0.0.1'
+    - FBCP_DISPLAY: ""
+  defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberry-pi
     - raspberry-pi2
