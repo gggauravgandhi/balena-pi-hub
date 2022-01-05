@@ -1,0 +1,61 @@
+name: "Pi-Hub"
+type: sw.application
+version: 1.0.0
+description: >-
+  Build a single or multi-room streamer for an existing audio device using a
+  Raspberry Pi! Supports Bluetooth, Airplay and Spotify Connect
+  AND
+  Pi-hole is a Linux network-level advertisement and Internet tracker blocking application!
+fleetcta: Sounds good
+post-provisioning: >-
+  ## Usage instructions
+
+
+  **Application download**
+
+  Once you power up your device you'll need to allow some time for it to
+  download the application, this typically takes 5-10 minutes but it can take
+  more depending on your internet connection and what device you are using.
+
+
+  **Usage**
+
+  When the download is completed the application will start. You should see a
+  balenaSound broadcasted as a speaker on your bluetooth, Airplay and Spotify
+  Connect streaming services. You can also access http://balena or
+  http://balena.local to access balenaSound's control panel.
+
+  For detailed instructions on how to use balenaSound check out
+  [this](https://sound.balenalabs.io/docs/usage) guide.
+  AND
+  ## Usage instructions
+  
+  Once your device joins the fleet you'll need to allow some time for it to download the application and download blocklists.
+  
+  When it's done you should be able to access the access the app at http://pihole.local with a default password of `balena`.
+
+  On your router or DHCP server assign a static IP to your Pi-hole device, and set your clients DNS to the same IP address.
+  
+  Documentation for Pi-hole can be found at https://docs.pi-hole.net/
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/balenalabs/balena-sound'
+  logo:
+    type: blob.asset
+    data:
+      url: >-
+        https://raw.githubusercontent.com/balenalabs/balena-sound/master/logo.png
+data:
+  applicationEnvironmentVariables:
+    - SOUND_VOLUME: 75
+    - AUDIO_OUTPUT: AUTO
+  defaultDeviceType: raspberry-pi
+  supportedDeviceTypes:
+    - raspberry-pi
+    - raspberry-pi2
+    - raspberrypi3
+    - raspberrypi4-64
+    - fincm3
+    - intel-nuc

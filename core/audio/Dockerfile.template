@@ -1,0 +1,6 @@
+FROM balenablocks/audio
+
+WORKDIR /usr/src
+COPY . .
+
+CMD [ "/bin/bash", "/usr/src/start.sh" ]
